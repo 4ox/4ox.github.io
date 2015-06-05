@@ -1,3 +1,8 @@
+<!doctype html>
+<head>
+</head>
+<body>
+
 <div style="font-family: 'Lucida Grande', 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Lucida Sans Unicode', Helvetica, Arial, sans-serif; font-size: 0.9em; overflow-x: hidden; overflow-y: auto; margin: 0px !important; padding: 5px 20px 26px !important; background-color: rgb(255, 255, 255);font-family: 'Hiragino Sans GB', 'Microsoft YaHei', STHeiti, SimSun, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Segoe UI', AppleSDGothicNeo-Medium, 'Malgun Gothic', Verdana, Tahoma, sans-serif; padding: 20px;padding: 20px; color: rgb(115, 115, 115); font-size: 15px; -webkit-font-smoothing: antialiased; background: rgb(255, 255, 255);"><h1 id="docker-설명서" style="clear: both;font-size: 2.2em; font-weight: bold; margin: 1.5em 0px 1em;margin-top: 0px;color: rgb(64, 64, 64);"><a name="docker-설명서" href="#docker-설명서" style="text-decoration: none; vertical-align: baseline;color: rgb(30, 110, 167);"></a>Docker 설명서</h1><ul>
 <li style="display: list-item; line-height: 1.4em;">출처 및 참고 : <a href="http://pyrasis.com/Docker/Docker-HOWTO" style="text-decoration: none; vertical-align: baseline;color: rgb(30, 110, 167);">pyrasis</a></li></ul><h2 id="docker-install" style="clear: both;font-size: 1.8em; font-weight: bold; margin: 1.275em 0px 0.85em;color: rgb(64, 64, 64);border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); line-height: 1.7em;"><a name="docker-install" href="#docker-install" style="text-decoration: none; vertical-align: baseline;color: rgb(30, 110, 167);"></a>Docker Install</h2><h5 id="yum으로-docker설치" style="clear: both;font-size: 1.2em; font-weight: bold; margin: 0.855em 0px 0.57em;color: rgb(64, 64, 64);"><a name="yum으로-docker설치" href="#yum으로-docker설치" style="text-decoration: none; vertical-align: baseline;color: rgb(30, 110, 167);"></a>yum으로 docker설치</h5><pre style="border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; word-wrap: break-word; border: 1px solid rgb(204, 204, 204); overflow: auto; padding: 0.5em;display: block; overflow-x: auto; padding: 0.5em; background: rgb(39, 40, 34);color: rgb(221, 221, 221);"><code class="bash" data-origin="<pre><code class=&quot;bash&quot;>[root@7cent ~]# yum install docker
 Loaded plugins: fastestmirror, langpacks
@@ -158,3 +163,22 @@ Deleted: e118faab2e16f9d858fcec0d86c9148e9b0fa021697239745f3253f367941dcc
 [root@<span class="hljs-number">7</span>cent ~]<span class="hljs-comment" style="color: rgb(117, 113, 94);"># docker images</span>
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 </code></pre><p style="margin: 1em 0px; word-wrap: break-word;">docker images 를 확인하면 pull받았던 ubuntu 이미지가 존재함을 확인 할 수있는데<br style="clear: both;">docker rmi ubuntu:latest 명령어를 통해 해당 이미지를 삭제 할 수 있습니다.<br style="clear: both;">다시한번 확인해보면 해당 이미지가 삭제 되었음을 확인 할 수 있습니다.</p></div>
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = '4ox';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</body>
+</html>
