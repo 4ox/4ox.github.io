@@ -1,0 +1,436 @@
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Docker Manual</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Docker Manual">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Docker Manual">
+    <meta property="og:description" content="">
+
+    <meta name="twitter:site" content="@yourblogtwitter">
+
+<meta name="twitter:creator" content="@yourtwitter">
+
+<meta name="google-site-verification" content="">
+
+<meta property="fb:admins" content="">
+
+    <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="../apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link href="http://fonts.googleapis.com/" rel="dns-prefetch">
+    <link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic%7COpen+Sans:700,400&amp;subset=latin,latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/main.min.css?v=508ab6383d">
+
+    <script type="text/javascript">
+      var ga_ua = 'UA-XXXXX-X';
+
+var disqus_shortname = 'example';
+
+var enable_pjax = true;
+
+      // Pace Options
+      // ==============
+      window.paceOptions = {
+        catchupTime: 100,
+        minTime: 100,
+        elements: false,
+        restartOnRequestAfter: 500,
+        startOnPageLoad: false
+      }
+
+      // Ghostium Globals
+      // ==============
+      window.GHOSTIUM = {};
+      GHOSTIUM.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
+      GHOSTIUM.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
+      GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
+    </script>
+
+    <script src="../assets/js/head-scripts.min.js?v=508ab6383d"></script>
+
+    <link rel="canonical" href="index.html">
+    
+    <meta property="og:site_name" content="4ox's development log">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Docker Manual">
+    <meta property="og:description" content="Docker 설명서 출처 및 참고 : pyrasis Docker Install yum으로 docker설치 [root@7cent ~]# yum install docker Loaded plugins: fastestmirror, langpacks  &amp;lt;del&amp;gt; blahblah &amp;lt;/del&amp;gt;  Installed:    docker.x86_64 0:1.6.0-11.0.1.el7.centos Dependency Installed:...">
+    <meta property="og:url" content="http://localhost:2368/docker-manual/">
+    <meta property="article:published_time" content="2015-06-06T07:32:13.538Z">
+    <meta property="article:modified_time" content="2015-06-06T07:36:42.368Z">
+    <meta property="article:tag" content="Getting Started">
+    <meta property="article:tag" content="Docker">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Docker Manual">
+    <meta name="twitter:description" content="Docker 설명서 출처 및 참고 : pyrasis Docker Install yum으로 docker설치 [root@7cent ~]# yum install docker Loaded plugins: fastestmirror, langpacks  &amp;lt;del&amp;gt; blahblah &amp;lt;/del&amp;gt;  Installed:    docker.x86_64 0:1.6.0-11.0.1.el7.centos Dependency Installed:...">
+    <meta name="twitter:url" content="http://localhost:2368/docker-manual/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "4ox's development log",
+    "author": {
+        "@type": "Person",
+        "name": "4ox",
+        "image": "http://localhost:2368/content/images/2015/06/4ox.png",
+        "url": "http://localhost:2368/author/4ox",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "Docker Manual",
+    "url": "http://localhost:2368/docker-manual/",
+    "datePublished": "2015-06-06T07:32:13.538Z",
+    "dateModified": "2015-06-06T07:36:42.368Z",
+    "keywords": "Getting Started, Docker",
+    "description": "Docker 설명서 출처 및 참고 : pyrasis Docker Install yum으로 docker설치 [root@7cent ~]# yum install docker Loaded plugins: fastestmirror, langpacks  &amp;lt;del&amp;gt; blahblah &amp;lt;/del&amp;gt;  Installed:    docker.x86_64 0:1.6.0-11.0.1.el7.centos Dependency Installed:..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.6">
+    <link rel="alternate" type="application/rss+xml" title="4ox's development log" href="../rss/index.html">
+  </head>
+  <body class="post-template tag-getting-started tag-docker">
+
+    <button data-action="open-drawer" id="drawer-button" class="drawer-button"><i class="fa fa-bars"></i></button>
+<nav tabindex="-1" class="drawer">
+  <div class="drawer-container">
+    <!--.drawer-search(role="search")-->
+    <ul role="navigation" class="drawer-list">
+      
+<li class="drawer-list-item">
+  <a href="../" data-pjax>
+    <i class="fa fa-home"></i>Home
+  </a>
+</li>
+<li class="drawer-list-item">
+  <a href="../rss/index.rss">
+    <i class="fa fa-rss"></i>Subscribe to Feed
+  </a>
+</li>
+<li class="drawer-list-divider">
+
+<li class="drawer-list-item">
+  <a href="../about/">
+    <i class="fa fa-user-md"></i>about
+  </a>
+</li>
+
+
+<li class="drawer-list-divider">
+<li class="drawer-list-item drawer-list-title">
+  Follow me
+</li>
+<li class="drawer-list-item">
+  <a href="http://twitter.com" target="_blank">
+    <i class="fa fa-twitter"></i>Twitter
+  </a>
+</li>
+<li class="drawer-list-item">
+  <a href="http://github.com" target="_blank">
+    <i class="fa fa-github"></i>Github
+  </a>
+</li>
+    </ul>
+  </div>
+</nav>
+
+    <div class="drawer-overlay"></div>
+    <main id="container" role="main" class="container">
+      <div class="surface">
+        <div class="surface-container">
+          <div data-pjax-container class="content">
+            
+<section class="wrapper wrapper-post">
+  <div class="wrapper-container">
+    <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post post tag-getting-started tag-docker">
+        <section class="post-container">
+          <header class="post-header">
+            <ul class="post-meta-list">
+              <li class="post-meta-item">
+                <time datetime="2015-06-06" itemprop="datePublished">
+                  6 hours ago
+                </time>
+              </li>
+                <li class="post-meta-item">
+                    <a itemprop="articleSection" href="../tag/getting-started/" data-pjax>Getting Started</a>, 
+                    <a itemprop="keywords" href="../tag/docker/" data-pjax>Docker</a> 
+                </li>
+              <li class="post-meta-item">
+                <a href="index.html#disqus_thread" data-disqus-identifier="2">Comments</a>
+              </li>
+            </ul>
+            <h1 itemprop="name headline" class="post-title"><a href="index.html" itemprop="url" data-pjax title="Docker Manual">Docker Manual</a></h1>
+            <!--h2 itemprop="about" class="post-subtitle"></h2-->
+          </header>
+          <aside class="post-side">
+            <div class="post-author">
+                <a href="index.html" class="post-author-avatar">
+                  <img src="../content/images/2015/06/4ox.png" alt="4ox">
+                </a>
+              <div class="post-author-info">
+                <a href="index.html" class="post-author-name">
+                  4ox
+                </a>
+                <p class="post-author-bio"></p>
+              </div>
+            </div>
+          </aside>
+          <div itemprop="articleBody" class="post-body">
+            <h1 id="docker">Docker 설명서</h1>
+
+<ul>
+<li>출처 및 참고 : <a href="http://pyrasis.com/Docker/Docker-HOWTO">pyrasis</a></li>
+</ul>
+
+<h2 id="dockerinstall">Docker Install</h2>
+
+<h5 id="yumdocker">yum으로 docker설치</h5>
+
+<p><code>
+[root@7cent ~]# yum install docker
+Loaded plugins: fastestmirror, langpacks <br>
+&lt;del&gt; blahblah &lt;/del&gt; <br>
+Installed: <br>
+  docker.x86_64 0:1.6.0-11.0.1.el7.centos
+Dependency Installed: <br>
+  audit-libs-python.x86_64 0:2.4.1-5.el7
+  checkpolicy.x86_64 0:2.1.12-6.el7
+  docker-selinux.x86_64 0:1.6.0-11.0.1.el7.centos
+  libcgroup.x86_64 0:0.41-8.el7
+  libsemanage-python.x86_64 0:2.1.10-16.el7
+  policycoreutils-python.x86_64 0:2.2.5-15.el7
+  python-IPy.noarch 0:0.75-6.el7
+  setools-libs.x86_64 0:3.3.7-46.el7
+Complete! <br>
+</code></p>
+
+<p>간편하게 도커 패키지 실행</p>
+
+<h5 id="">설치 확인</h5>
+
+<p><code>
+[root@7cent ~]# docker --version
+Docker version 1.6.0, build 8aae715/1.6.0 <br>
+</code>
+<strong>1.6버전 빌드</strong> 확인</p>
+
+<h5 id="">도커 이미지 확인</h5>
+
+<p><code>
+[root@7cent ~]# docker images
+FATA[0001] Get http:///var/run/docker.sock/v1.18/images/json: dial unix /var/run/docker.sock: no such file or directory. Are you trying to connect to a TLS-enabled daemon without TLS? <br>
+</code>
+도커 이미지를 확인하려했으나 에러발생</p>
+
+<h5 id="">도커 데몬 실행</h5>
+
+<p><code>
+[root@7cent ~]# systemctl start docker.service
+[root@7cent ~]# chkconfig docker on
+알림: 'systemctl enable docker.service'에 요청을 전송하고 있습니다.
+ln -s '/usr/lib/systemd/system/docker.service' '/etc/systemd/system/multi-user.target.wants/docker.service' <br>
+[root@7cent ~]# docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE <br>
+</code>
+도커를 부팅시에 올라오게 설정하고 데몬을 실행, 그리고 현재 이미지가 아무것도 없음을 확인</p>
+
+<h2 id="installubuntu">Install Ubuntu</h2>
+
+<h5 id="ceontos7dockerubuntu">CeontOS7 위에 Docker로 Ubuntu 설치</h5>
+
+<p><code>
+[root@7cent ~]# docker pull ubuntu:latest
+latest: Pulling from docker.io/ubuntu <br>
+e118faab2e16: Pull complete <br>
+7e2c5c55ef2c: Pull complete <br>
+e04c66a223c4: Pull complete <br>
+fa81ed084842: Already exists <br>
+docker.io/ubuntu:latest: The image you are pulling has been verified. Important: image verification is a tech preview feature and should not be relied on to provide security. <br>
+Digest: sha256:738edd684282277c07f23277718e43562daf2ee210f7aca9a13fae65f0159ddd <br>
+Status: Downloaded newer image for docker.io/ubuntu:latest <br>
+[root@7cent ~]# docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE <br>
+docker.io/ubuntu    latest              fa81ed084842        3 days ago          188.3 MB <br>
+</code>
+Docker에서 Ubuntu 최신 버전을 받고 현재 받은 이미지 확인 latest(최신버전) 을 받았습니다.</p>
+
+<h5 id="docker">Docker 실행</h5>
+
+<p><code>
+docker run -i -t --name test ubuntu /bin/bash <br>
+</code>
+-i ( interactive), -t(Pseudo-tty) 옵션을 사용해서 Bash Shell에 입력 및 출력을 할 수 있습니다.
+--name 옵션은 test란 이름의 container를 생성합니다.
+도커를 실행합니다.</p>
+
+<h5 id="dockercontainer">Docker Container 목록 확인</h5>
+
+<pre><code>[root@7cent ~]# docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES  
+48faba53180c        ubuntu:latest       "/bin/bash"         13 minutes ago      Exited (0) 12 minutes ago                       test  
+</code></pre>
+
+<p>docker ps 하면 현재 실행중인 Container만 보입니다. -a 옵션을 통해 모든 도커 컨테이너를 확인합니다. <br>
+현재 test도커가 있음을 확인할 수 있습니다.</p>
+
+<h5 id="testubuntucontainer">test(Ubuntu) Container 실행 및 접속</h5>
+
+<pre><code>[root@7cent ~]# docker start test
+test  
+[root@7cent ~]# docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES  
+48faba53180c        ubuntu:latest       "/bin/bash"         15 minutes ago      Up 2 seconds                            test  
+[root@7cent ~]# docker attach test
+root@48faba53180c:/# ls  
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var  
+root@48faba53180c:/#  
+</code></pre>
+
+<p>test Container 를 실행하고 ps 명령어로 올라와있는지 확인합니다. <br>
+이후 attach 명령어로 해당 Container 쉘에 접근합니다.
+보통 <em>* Ctrl+D *</em> 혹은 <em>* exit *</em> 로 쉘을 종료하게 되는데 이러면 Docker Container가 종료됩니다.
+<em>* Ctrl+P *</em> 를 누른후 <em>* Ctrl+Q *</em> 를 연속으로 누르면 Container가 살아있는 채로 HostOS로 빠져 나올 수 있습니다.</p>
+
+<h5 id="dockercontainer">Docker Container 확인, 종료, 삭제</h5>
+
+<pre><code class="language-bash">[root@7cent ~]# docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES  
+48faba53180c        ubuntu:latest       "/bin/bash"         30 minutes ago      Up 5 minutes                            test  
+[root@7cent ~]# docker stop test
+test  
+[root@7cent ~]# docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES  
+48faba53180c        ubuntu:latest       "/bin/bash"         30 minutes ago      Exited (0) 7 seconds ago                       test  
+[root@7cent ~]# docker rm test
+test  
+[root@7cent ~]# docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES  
+</code></pre>
+
+<p>나와서 확인해보면 test Container가 실행중임을 확인 할 수 있습니다.
+해당 Container를 멈추면 Status가 Exited상태로 변함을 알 수 있습니다.
+docker rm test 명령어를 통해 Container를 삭제 하였습니다. <br>
+docker ps -a 명령어를 통해 Container가 완전 삭제 되었음을 확인 할 수 있습니다.</p>
+
+<h5 id="dockerimage">Docker Image 삭제</h5>
+
+<pre><code class="language-bash">[root@7cent ~]# docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE  
+docker.io/ubuntu    latest              fa81ed084842        3 days ago          188.3 MB  
+[root@7cent ~]# docker rmi ubuntu:latest
+Untagged: ubuntu:latest  
+Deleted: fa81ed084842076d1b39b56d084d99ec0011cd4a5ade1056be359486a8b213e4  
+Deleted: e04c66a223c45a6247237510c40117cef92acb0a4355f1ba90580ef6274b490d  
+Deleted: 7e2c5c55ef2cd7675dcc9e9cc012dc2f759ceaf0f36c950b672af6df87af5070  
+Deleted: e118faab2e16f9d858fcec0d86c9148e9b0fa021697239745f3253f367941dcc  
+[root@7cent ~]# docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE  
+</code></pre>
+
+<p>docker images 를 확인하면 pull받았던 ubuntu 이미지가 존재함을 확인 할 수있는데 <br>
+docker rmi ubuntu:latest 명령어를 통해 해당 이미지를 삭제 할 수 있습니다. <br>
+다시한번 확인해보면 해당 이미지가 삭제 되었음을 확인 할 수 있습니다.</p>
+          </div>
+          <footer class="post-footer">
+            <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
+                <a href="index.html" class="post-author-avatar">
+                  <img itemprop="image" src="../content/images/2015/06/4ox.png" alt="4ox">
+                </a>
+              <div class="post-author-info">
+                <h4 class="post-footer-heading">Written By</h4>
+                <a href="index.html" itemprop="url" class="post-author-name">
+                  <span itemprop="name">4ox</span>
+                </a>
+                <p itemprop="description" class="post-author-bio"></p>
+                <p class="post-info">
+                  <b class="post-info-title">Published on</b>
+                  <time class="post-date">June 06, 2015</time>
+                </p>
+              </div>
+            </div>
+            <div class="post-social">
+              <h4 class="post-footer-heading">Spread the word</h4>
+              <a href="index.html#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
+              <a href="index.html#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
+              <a href="index.html#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+            </div>
+          </footer>
+        </section>
+      <section itemprop="comment" class="post-comments">
+        <div id="disqus_thread"></div>
+      </section>
+    </article>
+
+    <footer role="contentinfo" class="footer">
+  <p><small>© 2015. All Rights Reserved.</small></p>
+  <p><small><a href="http://ghostium.oswaldoacauan.com/" target="_blank">Ghostium Theme</a> by <a href="http://twitter.com/oswaldoacauan" target="_blank">@oswaldoacauan</a></small></p>
+  <p><small>Proudly published with <a href="http://ghost.org" target="_blank">Ghost</a></small></p>
+</footer>
+  </div>
+</section>
+
+<script type="text/javascript">
+  if(GHOSTIUM.haveDisqus) {
+    var disqus_identifier = '2';
+
+    if(typeof DISQUS !== 'object') {
+      (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+    }
+  } else {
+    document.querySelector('.post-comments').remove();
+  }
+</script>
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../public/jquery.js?v=508ab6383d"></script>
+
+    <script src="../assets/js/foot-scripts.min.js?v=508ab6383d"></script>
+
+    <script type="text/javascript">
+
+      if(GHOSTIUM.haveGA) {
+        (function(g,h,o,s,t,z){g.GoogleAnalyticsObject=s;g[s]||(g[s]=
+        function(){(g[s].q=g[s].q||[]).push(arguments)});g[s].s=+new Date;
+        t=h.createElement(o);z=h.getElementsByTagName(o)[0];
+        t.src='//www.google-analytics.com/analytics.js';
+        z.parentNode.insertBefore(t,z)}(window,document,'script','ga'));
+        ga('create',ga_ua);ga('send','pageview');
+      }
+
+      if(GHOSTIUM.haveDisqus) {
+        (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+      }
+    </script>
+  </body>
