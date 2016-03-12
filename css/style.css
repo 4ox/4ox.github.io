@@ -28,3 +28,7 @@ a:active {
 a {
 	color : #00802b;
 }
+
+.poster {
+    width: 400px;
+}
