@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Welcome to Jekyll!</title>
-  <meta name="description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...">
+  <title>자바 람다 테스트</title>
+  <meta name="description" content="JAVA8">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/jekyll/update/2017/08/28/welcome-to-jekyll.html">
+  <link rel="canonical" href="http://localhost:4000/java/lambda/2015/12/23/java-lambda-test.html">
   <link rel="alternate" type="application/rss+xml" title="4ox devlog" href="/feed.xml">
   
   
@@ -70,30 +70,37 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Welcome to Jekyll!</h1>
+    <h1 class="post-title" itemprop="name headline">자바 람다 테스트</h1>
     <p class="post-meta">
-      <time datetime="2017-08-28T23:25:28+09:00" itemprop="datePublished">
+      <time datetime="2015-12-23T12:00:00+09:00" itemprop="datePublished">
         
-        Aug 28, 2017
+        Dec 23, 2015
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+    <h2 id="java8">JAVA8</h2>
 
-<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<p>자바8의 람다식을 테스트해봤다.</p>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<pre><code class="language-JAVA">package test;
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+import java.util.ArrayList;
 
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
-
+public class main {
+    public static void main(String[] args) {
+        ArrayList&lt;Integer&gt; arrayList = new ArrayList&lt;&gt;();
+        ArrayList&lt;Integer&gt; arrayList2 = new ArrayList&lt;&gt;();
+        
+        for(int i = 1; i &lt; 100; i++ ) arrayList.add(i);
+        
+        //람다 테스트
+        arrayList.forEach( i -&gt; arrayList2.add(i * 11) );
+        arrayList2.forEach( i -&gt; System.out.println(i) );
+    }
+}
+</code></pre>
 
   </div>
 
