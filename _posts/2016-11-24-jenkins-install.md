@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "gitlab 설치"
+date:   2016-11-24 12:00:00 +0900
+categories: jenkins
+---
+
 # JENKINS
 
 ## jenkins 레파지터리 등록 및 설치
