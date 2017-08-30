@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "자바 람다 테스트"
+title:  "Java lambda test"
 date:   2015-12-23 12:00:00 +0900
 categories: java lambda
 ---

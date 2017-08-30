@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "자바 콜렉션 테스트"
+title:  "Java Collection Test"
 date:   2015-12-24 12:00:00 +0900
 categories: java collection
 ---

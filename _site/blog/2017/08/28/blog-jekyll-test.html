@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Java lambda test</title>
-  <meta name="description" content="JAVA8">
+  <title>지킬 첫 글쓰기 테스트</title>
+  <meta name="description" content="지킬로 블로그를 생성해 보았다.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/java/lambda/2015/12/23/java-lambda-test.html">
+  <link rel="canonical" href="http://localhost:4000/blog/2017/08/28/blog-jekyll-test.html">
   <link rel="alternate" type="application/rss+xml" title="4ox devlog" href="/feed.xml">
   
   
@@ -70,37 +70,25 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Java lambda test</h1>
+    <h1 class="post-title" itemprop="name headline">지킬 첫 글쓰기 테스트</h1>
     <p class="post-meta">
-      <time datetime="2015-12-23T12:00:00+09:00" itemprop="datePublished">
+      <time datetime="2017-08-28T22:25:36+09:00" itemprop="datePublished">
         
-        Dec 23, 2015
+        Aug 28, 2017
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2 id="java8">JAVA8</h2>
+    <p>지킬로 블로그를 생성해 보았다.</p>
 
-<p>자바8의 람다식을 테스트해봤다.</p>
+<p>간단한 javascript 구문도 넣어본다.</p>
 
-<pre><code class="language-JAVA">package test;
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"a"</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"b"</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"c"</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"d"</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">"e"</span> <span class="p">:</span> <span class="mi">5</span> <span class="p">};</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">o</span><span class="p">);</span>
 
-import java.util.ArrayList;
+<span class="c1">//result : (5) [1, 2, 3, 4, 5]</span></code></pre></figure>
 
-public class main {
-    public static void main(String[] args) {
-        ArrayList&lt;Integer&gt; arrayList = new ArrayList&lt;&gt;();
-        ArrayList&lt;Integer&gt; arrayList2 = new ArrayList&lt;&gt;();
-        
-        for(int i = 1; i &lt; 100; i++ ) arrayList.add(i);
-        
-        //람다 테스트
-        arrayList.forEach( i -&gt; arrayList2.add(i * 11) );
-        arrayList2.forEach( i -&gt; System.out.println(i) );
-    }
-}
-</code></pre>
 
   </div>
 

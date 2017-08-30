@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>지킬 첫 글쓰기 테스트</title>
-  <meta name="description" content="지킬로 블로그를 생성해 보았다.">
+  <title>Jenkins install</title>
+  <meta name="description" content="JENKINS">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/noti/2017/08/28/test.html">
+  <link rel="canonical" href="http://localhost:4000/jenkins/2016/12/16/jenkins-install.html">
   <link rel="alternate" type="application/rss+xml" title="4ox devlog" href="/feed.xml">
   
   
@@ -70,25 +70,60 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">지킬 첫 글쓰기 테스트</h1>
+    <h1 class="post-title" itemprop="name headline">Jenkins install</h1>
     <p class="post-meta">
-      <time datetime="2017-08-28T22:25:36+09:00" itemprop="datePublished">
+      <time datetime="2016-12-16T12:00:00+09:00" itemprop="datePublished">
         
-        Aug 28, 2017
+        Dec 16, 2016
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>지킬로 블로그를 생성해 보았다.</p>
+    <h1 id="jenkins">JENKINS</h1>
 
-<p>간단한 javascript 구문도 넣어본다.</p>
+<h2 id="jenkins-레파지터리-등록-및-설치">jenkins 레파지터리 등록 및 설치</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+sudo rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
+sudo yum install jenkin
+</code></pre>
+</div>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"a"</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"b"</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"c"</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"d"</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">"e"</span> <span class="p">:</span> <span class="mi">5</span> <span class="p">};</span>
-<span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">o</span><span class="p">);</span>
+<h2 id="포트-변경-및-방화벽-등록">포트 변경 및 방화벽 등록</h2>
+<p>vim /etc/sysconfig/jenkins</p>
+<blockquote>
+  <p>JENKINS_PORT=”9000”</p>
+</blockquote>
 
-<span class="c1">//result : (5) [1, 2, 3, 4, 5]</span></code></pre></figure>
+<div class="highlighter-rouge"><pre class="highlight"><code>firewall-cmd --zone=public --add-port=9000/tcp --permanent
+firewall-cmd --reload
+</code></pre>
+</div>
 
+<h2 id="jenkins-시작-종료-상태-명령어">jenkins 시작 종료 상태 명령어</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>systemctl start jenkins.service
+systemctl stop jenkins.service
+systemctl status jenkins.service
+</code></pre>
+</div>
+
+<h2 id="jenkins-사용자-및-권한-관리">jenkins 사용자 및 권한 관리</h2>
+<blockquote>
+  <p>Jenkins관리 - Configure Global Security</p>
+  <ul>
+    <li>Enable security 체크</li>
+    <li>Jenkins’ own user database 체크 (사용자 가입 허용 안함)</li>
+    <li>Authorization 항목에서 Matrix-based security (유저별 권한 설정)</li>
+  </ul>
+</blockquote>
+
+<h2 id="jenkins-권한-관리-잘못-저장하면">jenkins 권한 관리 잘못 저장하면</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>vim /var/lib/jenkins/config.xml 
+</code></pre>
+</div>
+<blockquote>
+  <p>useSecurity 항목을 false 처리하고 jenkins 재시작</p>
+</blockquote>
 
   </div>
 

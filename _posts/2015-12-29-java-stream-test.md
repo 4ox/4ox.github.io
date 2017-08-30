@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "자바 스트림 테스트"
+title:  "Java Stream Test"
 date:   2015-12-29 12:00:00 +0900
 categories: java stream
 ---

@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Java lambda test</title>
-  <meta name="description" content="JAVA8">
+  <title>Gitlab install</title>
+  <meta name="description" content="GITLAB">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/java/lambda/2015/12/23/java-lambda-test.html">
+  <link rel="canonical" href="http://localhost:4000/git/gitlab/2016/12/16/git-gitlab-install.html">
   <link rel="alternate" type="application/rss+xml" title="4ox devlog" href="/feed.xml">
   
   
@@ -70,37 +70,43 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Java lambda test</h1>
+    <h1 class="post-title" itemprop="name headline">Gitlab install</h1>
     <p class="post-meta">
-      <time datetime="2015-12-23T12:00:00+09:00" itemprop="datePublished">
+      <time datetime="2016-12-16T12:00:00+09:00" itemprop="datePublished">
         
-        Dec 23, 2015
+        Dec 16, 2016
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2 id="java8">JAVA8</h2>
+    <h1 id="gitlab">GITLAB</h1>
 
-<p>자바8의 람다식을 테스트해봤다.</p>
-
-<pre><code class="language-JAVA">package test;
-
-import java.util.ArrayList;
-
-public class main {
-    public static void main(String[] args) {
-        ArrayList&lt;Integer&gt; arrayList = new ArrayList&lt;&gt;();
-        ArrayList&lt;Integer&gt; arrayList2 = new ArrayList&lt;&gt;();
-        
-        for(int i = 1; i &lt; 100; i++ ) arrayList.add(i);
-        
-        //람다 테스트
-        arrayList.forEach( i -&gt; arrayList2.add(i * 11) );
-        arrayList2.forEach( i -&gt; System.out.println(i) );
-    }
-}
+<h2 id="gitlab-ce-설치를-위한-패키지-설치및-방화벽-설정">gitlab-ce 설치를 위한 패키지 설치및 방화벽 설정</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>yum install curl policycoreutils openssh-server openssh-clients
+sudo systemctl enable sshd
+sudo systemctl start sshd
+sudo yum install postfix
+sudo systemctl enable postfix
+sudo systemctl start postfix
+sudo firewall-cmd --permanent --add-service=http
+sudo systemctl reload firewalld
 </code></pre>
+</div>
+
+<h2 id="gitlab-ce-설치">gitlab-ce 설치</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash
+yum install gitlab-ce
+gitlab-ctl reconfigure
+</code></pre>
+</div>
+
+<h2 id="gitlab-ce-시작-종료-상태-명령어">gitlab-ce 시작 종료 상태 명령어</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>gitlab-ctl start
+gitlab-ctl stop
+gitlab-ctl status
+</code></pre>
+</div>
 
   </div>
 

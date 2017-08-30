@@ -1,3 +1,11 @@
+---
+layout: post
+title:  "Jenkins install"
+date:   2016-12-16 12:00:00 +0900
+categories: jenkins
+---
+
+
 # JENKINS
 
 ## jenkins 레파지터리 등록 및 설치
