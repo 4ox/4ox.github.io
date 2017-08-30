@@ -1,10 +1,9 @@
 ---
 layout: post
-title:  "Gitlab install"
-date:   2016-12-16 12:00:00 +0900
+title:  "gitlab 설치"
+date:   2016-11-24 12:00:00 +0900
 categories: git gitlab
 ---
-
 
 # GITLAB
 

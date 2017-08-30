@@ -2,7 +2,11 @@
 layout: post
 title:  "지킬 첫 글쓰기 테스트"
 date:   2017-08-28 22:25:36 +0900
+<<<<<<< HEAD:_posts/2017-08-28-blog-jekyll-test.md
 categories: blog 
+=======
+categories: blog
+>>>>>>> 01ea5d6a58c5d66c3b2326c71305b36e365fbc9a:_posts/2017-08-28-test.md
 ---
 
 지킬로 블로그를 생성해 보았다.

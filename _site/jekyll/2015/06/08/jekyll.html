@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Jekyll 사용법</title>
+  <meta name="description" content="jekyll">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/jekyll/2015/06/08/jekyll.html">
+  <link rel="alternate" type="application/rss+xml" title="4ox devlog" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/">4ox devlog</a>
+  
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Jekyll 사용법</h1>
+    <p class="post-meta">
+      <time datetime="2015-06-08T12:00:00+09:00" itemprop="datePublished">
+        
+        Jun 8, 2015
+      </time>
+      </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h1 id="jekyll">jekyll</h1>
+
+<p>Jekyll 은 아주 심플하고 블로그 지향적인 정적 사이트 생성기입니다. Jekyll 은 다양한 포맷의 원본 텍스트 파일을 템플릿 디렉토리로부터 읽어서, Markdown (또는 Textile) 과 Liquid 변환 작업을 수행하여, 당신이 즐겨 사용하는 웹 서버에 곧바로 게시할 수 있는, 완전한 정적 웹사이트를 만들어냅니다. 또한 Jekyll 은 GitHub Pages 의 내부 엔진이기도 합니다. 다시 말해, Jekyll 을 사용하여 자신의 프로젝트 페이지나 블로그, 웹사이트를 GitHub 에 무료로 호스팅 할 수 있다는 것입니다.</p>
+
+<ul>
+  <li>출처 및 참고 : <a href="http://jekyllrb-ko.github.io/">지킬 메뉴얼 한국어 번역</a></li>
+</ul>
+
+<h2 id="요구사항">요구사항</h2>
+
+<ol>
+  <li>Ruby (개발 패키지 포함)</li>
+  <li>RubyGems</li>
+  <li>리눅스, 유닉스, 또는 맥 OS X</li>
+  <li>NodeJS, 또는 다른 JavaScript 실행환경 (CoffeeScript 지원에 필요함).</li>
+</ol>
+
+<h2 id="설치">설치</h2>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo gem update --system
+
+sudo gem install jekyll
+
+sudo gem install rubygems-update
+update_rubygems
+</code></pre>
+</div>
+
+<p>gem 을 최신버전으로 업데이트하고 지킬을 설치한다
+rubygems 설치 및 최신버전 업데이트</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>4ox@mac:~/Workspace
+<span class="gp">&gt;&gt; </span>jekyll
+jekyll 2.5.3 -- Jekyll is a blog-aware, static site generator <span class="k">in </span>Ruby
+
+Usage:
+
+  jekyll &lt;subcommand&gt; <span class="o">[</span>options]
+
+Options:
+        -s, --source <span class="o">[</span>DIR]  Source directory <span class="o">(</span>defaults to ./<span class="o">)</span>
+        -d, --destination <span class="o">[</span>DIR]  Destination directory <span class="o">(</span>defaults to ./_site<span class="o">)</span>
+            --safe         Safe mode <span class="o">(</span>defaults to <span class="nb">false</span><span class="o">)</span>
+        -p, --plugins PLUGINS_DIR1[,PLUGINS_DIR2[,...]]  Plugins directory <span class="o">(</span>defaults to ./_plugins<span class="o">)</span>
+            --layouts DIR  Layouts directory <span class="o">(</span>defaults to ./_layouts<span class="o">)</span>
+        -h, --help         Show this message
+        -v, --version      Print the name and version
+        -t, --trace        Show the full backtrace when an error occurs
+
+Subcommands:
+  build, b              Build your site
+  docs                  Launch <span class="nb">local </span>server with docs <span class="k">for </span>Jekyll v2.5.3
+  doctor, hyde          Search site and print specific deprecation warnings
+  <span class="nb">help                  </span>Show the <span class="nb">help </span>message, optionally <span class="k">for </span>a given subcommand.
+  new                   Creates a new Jekyll site scaffold <span class="k">in </span>PATH
+  serve, server, s      Serve your site locally
+
+root@mac:~/Workspace
+<span class="gp">&gt;&gt; </span>jekyll new testBlog
+New jekyll site installed <span class="k">in</span> /Users/woong/Workspace/testBlog.
+
+root@mac:~/Workspace
+<span class="gp">&gt;&gt; </span><span class="nb">cd </span>testBlog/
+</code></pre>
+</div>
+<p>jekyll이 제대로 설치 되었는지 확인하고 테스트로 하나 만들어봅니다.</p>
+
+<h2 id="테스트">테스트</h2>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>4ox@mac:~/Workspace/testBlog
+<span class="gp">&gt;&gt; </span>jekyll serve
+Configuration file: /Users/woong/Workspace/testBlog/_config.yml
+            Source: /Users/woong/Workspace/testBlog
+       Destination: /Users/woong/Workspace/testBlog/_site
+      Generating...
+                    <span class="k">done</span>.
+ Auto-regeneration: enabled <span class="k">for</span> <span class="s1">'/Users/woong/Workspace/testBlog'</span>
+Configuration file: /Users/woong/Workspace/testBlog/_config.yml
+    Server address: http://127.0.0.1:4000/
+  Server running... press ctrl-c to stop.
+</code></pre>
+</div>
+<p>이후 jekyll serve 명령어를 통해 테스트할 수 있는 서버를 띄웁니다.
+브라우저를 띄워 http://localhost:4000 으로 접속하면 아래 화면을 볼 수 있습니다.</p>
+
+<p><img src="/Users/woong/Desktop/serve.png" alt="serve.png" /></p>
+
+<h2 id="빌드">빌드</h2>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>4ox@mac:~/Workspace/testBlog
+<span class="gp">&gt;&gt; </span>jekyll build
+Configuration file: /Users/woong/Workspace/testBlog/_config.yml
+            Source: /Users/woong/Workspace/testBlog
+       Destination: /Users/woong/Workspace/testBlog/_site
+      Generating...
+                    <span class="k">done</span>.
+ Auto-regeneration: disabled. Use --watch to enable.
+
+4ox@mac:~/Workspace/testBlog
+<span class="gp">&gt;&gt; </span>ll
+total 40
+drwxr-xr-x  14 woong  staff   476  6  5 16:42 .
+drwxr-xr-x  10 woong  staff   340  6  5 16:39 ..
+-rw-r--r--   1 woong  staff    18  6  5 16:39 .gitignore
+drwxr-xr-x   3 woong  staff   102  6  5 16:42 .sass-cache
+-rw-r--r--   1 woong  staff   557  6  5 16:39 _config.yml
+drwxr-xr-x   5 woong  staff   170  6  5 16:39 _includes
+drwxr-xr-x   5 woong  staff   170  6  5 16:39 _layouts
+drwxr-xr-x   3 woong  staff   102  6  5 16:39 _posts
+drwxr-xr-x   5 woong  staff   170  6  5 16:39 _sass
+drwxr-xr-x   7 woong  staff   238  6  5 16:42 _site
+-rw-r--r--   1 woong  staff   470  6  5 16:39 about.md
+drwxr-xr-x   3 woong  staff   102  6  5 16:39 css
+-rw-r--r--   1 woong  staff  1291  6  5 16:39 feed.xml
+-rw-r--r--   1 woong  staff   506  6  5 16:39 index.html
+</code></pre>
+</div>
+<p>jekyll을 빌드하고 폴더 내부를 살펴보면 이런 파일들과 폴더들이 생성됩니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>파일/폴더</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_config.yml</td>
+      <td>환경설정 정보를 보관합니다. 명령어에 직접 옵션을 지정하여 실행할 수도 있지만, 그렇게 따로 외워두는 것보다 이 파일에 정의해두는 편이 더 쉽습니다.</td>
+    </tr>
+    <tr>
+      <td>_drafts</td>
+      <td>초안은 게시하기 전 상태의 포스트입니다. 파일명 형식에 날짜가 없습니다: title.MARKUP. 초안 활용하기를 읽어보세요.</td>
+    </tr>
+    <tr>
+      <td>_includes</td>
+      <td>필요에 따라 포스트나 레이아웃에 끼워넣을 수 있는 조각들로서, 쉽게 재사용할 수 있습니다.  {\% include file.ext \%}’ 라는 Liquid 태그를 사용하면, 조각 파일 _includes/file.ext 이 삽입됩니다.</td>
+    </tr>
+    <tr>
+      <td>_layouts</td>
+      <td>이 템플릿들이 포스트 주위를 감쌉니다. 다음 섹션에서 설명하는 YAML 머리말에 의하여 각 포스트 별로 레이아웃이 선택됩니다. 페이지에 컨텐츠를 주입할 때는 &lt;article class="post" itemscope itemtype="http://schema.org/BlogPosting"&gt;</td>
+    </tr>
+  </tbody>
+</table>
+
+<header class="post-header">
+    <h1 class="post-title" itemprop="name headline">centOS7 network 변경</h1>
+    <p class="post-meta">
+      <time datetime="2015-06-08T12:00:00+09:00" itemprop="datePublished">
+        
+        Jun 8, 2015
+      </time>
+      </p>
+  </header>
+
+<div class="post-content" itemprop="articleBody">
+    <h1 id="centos-7-에서-네트워크-설정">CentOS 7 에서 네트워크 설정</h1>
+
+<h5 id="centos-7에서-네트워크-인터페이스의-명칭이-변경되었습니다">CentOS 7에서 네트워크 인터페이스의 명칭이 변경되었습니다.</h5>
+
+<p>지금까지는 “eth ~” 였는데,
+7.0부터는 “en ~ ‘ 로 바뀌었다. (예. enp0s2)
+설정 파일의 위치는 : “/etc/sysconfig/network-script” 아래에 있습니다.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="o">[</span>root@7cent ~] <span class="nv">$ </span>ls -la /etc/sysconfig/network-scripts/ifcfg<span class="k">*</span>
+-rw-r - r-- 1 root root 321 8 월 8 09:03 /etc/sysconfig/network-scripts/ifcfg-enp0s2
+-rw-r - r-- 1 root root 254 8 월 3 09:30 /etc/sysconfig/network-scripts/ifcfg-lo
+</code></pre>
+</div>
+<p>네트워크를 설정해 보겠습니다.</p>
+
+<p>기본은 dhcp로 되어있습니다.</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>
+<span class="nv">HWADDR</span><span class="o">=</span><span class="s2">"00:00:29:08:A5:37"</span>
+<span class="nv">TYPE</span><span class="o">=</span><span class="s2">"Ethernet"</span>
+<span class="nv">BOOTPROTO</span><span class="o">=</span><span class="s2">"dhcp"</span>
+<span class="nv">DEFROUTE</span><span class="o">=</span><span class="s2">"yes"</span>
+<span class="nv">PEERDNS</span><span class="o">=</span><span class="s2">"yes"</span>
+<span class="nv">PEERROUTES</span><span class="o">=</span><span class="s2">"yes"</span>
+<span class="nv">IPV4_FAILURE_FATAL</span><span class="o">=</span><span class="s2">"no"</span>
+<span class="nv">IPV6INIT</span><span class="o">=</span><span class="s2">"yes"</span>
+<span class="nv">IPV6_AUTOCONF</span><span class="o">=</span><span class="s2">"yes"</span>
+<span class="nv">IPV6_DEFROUTE</span><span class="o">=</span><span class="s2">"yes"</span>
+<span class="nv">IPV6_PEERDNS</span><span class="o">=</span><span class="s2">"yes"</span>
+<span class="nv">IPV6_PEERROUTES</span><span class="o">=</span><span class="s2">"yes"</span>
+<span class="nv">IPV6_FAILURE_FATAL</span><span class="o">=</span><span class="s2">"no"</span>
+<span class="nv">NAME</span><span class="o">=</span><span class="s2">"enp0s3"</span>
+<span class="nv">UUID</span><span class="o">=</span><span class="s2">"b3d0246c-d2ba-49c7-98fb-2c394b30e29b"</span>
+<span class="nv">ONBOOT</span><span class="o">=</span><span class="s2">"yes"</span>
+</code></pre>
+</div>
+
+<p>고정 IP로 바꿔보겠습니다.
+고정 IP “10.10.91.244”로 바꿔보겠습니다.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nv">HWADDR</span><span class="o">=</span><span class="s2">"00:00:29:08:A5:37"</span>
+<span class="nv">TYPE</span><span class="o">=</span><span class="s2">"Ethernet"</span>
+<span class="nv">BOOTPROTO</span><span class="o">=</span><span class="s2">"none"</span>
+<span class="nv">DEFROUTE</span><span class="o">=</span><span class="s2">"yes"</span>
+<span class="nv">PEERDNS</span><span class="o">=</span><span class="s2">"yes"</span>
+<span class="nv">PEERROUTES</span><span class="o">=</span><span class="s2">"yes"</span>
+<span class="nv">IPV4_FAILURE_FATAL</span><span class="o">=</span><span class="s2">"no"</span>
+<span class="nv">IPV6INIT</span><span class="o">=</span><span class="s2">"yes"</span>
+<span class="nv">IPV6_AUTOCONF</span><span class="o">=</span><span class="s2">"yes"</span>
+<span class="nv">IPV6_DEFROUTE</span><span class="o">=</span><span class="s2">"yes"</span>
+<span class="nv">IPV6_PEERDNS</span><span class="o">=</span><span class="s2">"yes"</span>
+<span class="nv">IPV6_PEERROUTES</span><span class="o">=</span><span class="s2">"yes"</span>
+<span class="nv">IPV6_FAILURE_FATAL</span><span class="o">=</span><span class="s2">"no"</span>
+<span class="nv">NAME</span><span class="o">=</span><span class="s2">"enp0s3"</span>
+<span class="nv">UUID</span><span class="o">=</span><span class="s2">"b3d0246c-d2ba-49c7-98fb-2c394b30e29b"</span>
+<span class="nv">ONBOOT</span><span class="o">=</span><span class="s2">"yes"</span>
+
+<span class="c"># IP Address</span>
+IPADDR <span class="o">=</span> <span class="s2">"10.10.91.244"</span>
+<span class="c"># Subnet Mask</span>
+NETMASK <span class="o">=</span> <span class="s2">"255.255.254.0"</span>
+<span class="c"># Default Gateway</span>
+GATEWAY <span class="o">=</span> <span class="s2">"10.10.90.1"</span>
+<span class="c"># DNS Server</span>
+DNS1 <span class="o">=</span> <span class="s2">"168.126.63.1"</span>
+</code></pre>
+</div>
+<p>바뀐 부분은 세번째 줄에 “BOOTPROTO”의 값을 “dhcp”에서 “none”으로 변경하고,
+(IP 주소, 서브넷 마스크, 기본 게이트웨이, DNS 서버)의 내용을 추가하면 된다.
+설정 파일을 수정했다면 네트워크를 다시 시작합니다.</p>
+
+<p>systemctl restart NetworkManager
+systemctl restart network</p>
+
+<p>Cent OS 7.0의 네트워크 설정이 완료되었습니다.</p>
+
+<p><a href="http://manseok.blogspot.kr/2014/08/centos-70.html">출처 : 만석이의 예술 이야기</a></p>
+
+
+  </div>
+
+<p>&lt;/article&gt;
+ 라는 Liquid 태그를 사용합니다.
+| _posts | 말하자면 동적인, 당신의 컨텐츠입니다. 파일의 명명 규약이 아주 중요한데, 반드시 다음 규칙을 따라야 합니다:  YEAR-MONTH-DAY-title.MARKUP. 고유주소는 각 포스트 별로 수정이 가능하지만, 날짜와 마크업 언어 종류는 오로지 파일명에 의해서 결정됩니다.
+| _data | 여기에는 올바르게 형식화된 사이트 데이터를 보관합니다. Jekyll 엔진은 이 디렉토리에 있는 모든 YAML 파일 (확장자가 .yml 또는 .yaml) 을 자동으로 읽어들입니다. 만약 이 디렉토리에 members.yml 파일이 있다면, site.data.members 라고 입력하여 그 컨텐츠에 접근할 수 있습니다.
+| _site | Jekyll 이 변환을 마치고 나서 생성된 사이트가 저장되는 (기본값) 위치입니다. 아마도 .gitignore 파일에 이 디렉토리를 추가하는 것이 좋을 것입니다. index.html 과 다른 HTML, Markdown, Textile 파일들 파일에 YAML 머리말 섹션이 있다면 Jekyll 에 의해 변환됩니다. 사이트의 루트 디렉토리나 위에 언급된 디렉토리 외에 다른 모든 디렉토리 안의 .html 이나 .markdown, .md, .textile 파일도 해당됩니다.
+| 다른파일 폴더 | css 나 images 폴더, favicon.ico 파일 등 위에 언급되지 않은 다른 디렉토리와 파일들은 그대로 복사됩니다. 다른 사이트들은 어떤식으로 구성되었는지 궁금하다면, 이미 Jekyll 을 사용하는 사이트들이 많이 있으니 살펴보세요. |</p>
+
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">4ox devlog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              4ox devlog
+            
+            </li>
+            
+            <li><a href="mailto:mail@4ox.kr">mail@4ox.kr</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/4ox"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">4ox</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/4oxmile"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">4oxmile</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>devlog
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

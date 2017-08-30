@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Gitlab install</title>
-  <meta name="description" content="GITLAB">
+  <title>centos6 setting</title>
+  <meta name="description" content="centos7 설정값">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/git/gitlab/2016/12/16/git-gitlab-install.html">
+  <link rel="canonical" href="http://localhost:4000/centos/2016/03/24/centos7-setting.html">
   <link rel="alternate" type="application/rss+xml" title="4ox devlog" href="/feed.xml">
   
   
@@ -70,43 +70,192 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Gitlab install</h1>
+    <h1 class="post-title" itemprop="name headline">centos6 setting</h1>
     <p class="post-meta">
-      <time datetime="2016-12-16T12:00:00+09:00" itemprop="datePublished">
+      <time datetime="2016-03-24T22:25:36+09:00" itemprop="datePublished">
         
-        Dec 16, 2016
+        Mar 24, 2016
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h1 id="gitlab">GITLAB</h1>
+    <h1 id="centos7-설정값">centos7 설정값</h1>
 
-<h2 id="gitlab-ce-설치를-위한-패키지-설치및-방화벽-설정">gitlab-ce 설치를 위한 패키지 설치및 방화벽 설정</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code>yum install curl policycoreutils openssh-server openssh-clients
-sudo systemctl enable sshd
-sudo systemctl start sshd
-sudo yum install postfix
-sudo systemctl enable postfix
-sudo systemctl start postfix
-sudo firewall-cmd --permanent --add-service=http
-sudo systemctl reload firewalld
+<ul>
+  <li>초기 설정
+```
+// PC 비프음 제거
+rmmod -v pcspkr</li>
+</ul>
+
+<p>// hostname 변경
+vim /etc/hostname</p>
+<blockquote>
+  <blockquote>
+    <p>env</p>
+  </blockquote>
+</blockquote>
+
+<p>// network on
+vi /etc/sysconfig/network-script/ifcfg-{blahblah}</p>
+<blockquote>
+  <blockquote>
+    <p>변경
+onboot=YES</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <p>재부팅 혹은 네트워크 재시작
+init 6 
+systemctl network restart</p>
+</blockquote>
+
+<p>// upgrade
+yum upgrade -y</p>
+
+<p>// vim 설치
+yum install -y vim</p>
+
+<p>// ifconfig 보기위한 툴 설치
+yum install net-tools</p>
+
+<p>// iptalbes 설치 및 등록
+yum install -y iptables-services
+systemctl enable iptables</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+- 환경 설정
 </code></pre>
 </div>
+<p>// JDK 설치</p>
+<blockquote>
+  <p>설치 가능 목록 확인 및 1.8버전 설치
+yum list java*jdk-devel
+yum install -y java-1.8.0-openjdk-devel.x86_64</p>
+</blockquote>
 
-<h2 id="gitlab-ce-설치">gitlab-ce 설치</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash
-yum install gitlab-ce
-gitlab-ctl reconfigure
-</code></pre>
-</div>
+<blockquote>
+  <p>설치 확인
+java -version
+javac -version</p>
+</blockquote>
 
-<h2 id="gitlab-ce-시작-종료-상태-명령어">gitlab-ce 시작 종료 상태 명령어</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code>gitlab-ctl start
-gitlab-ctl stop
-gitlab-ctl status
-</code></pre>
-</div>
+<p>// TOMCAT7 설치</p>
+<blockquote>
+  <p>기본 페키지에 없는 레파지토리 설치
+yum install -y yum-plugin-priorities</p>
+</blockquote>
+
+<blockquote>
+  <p>jpackage 레파지토리 추가 ( java 패키지 )
+wget -O- http://www.jpackage.org/jpackage.asc | gpg –import</p>
+</blockquote>
+
+<blockquote>
+  <p>tomcat7 설치 목록 확인
+yum list tomcat7* | grep tomcat</p>
+</blockquote>
+
+<blockquote>
+  <p>tomcat7 설치
+ yum install -y tomcat7 tomcat7-admin-webapps tomcat7-webapps –skip-broken</p>
+</blockquote>
+
+<blockquote>
+  <p>방화벽 열기
+iptables -I INPUT 1 -p tcp –dport 8080 -j ACCEPT</p>
+</blockquote>
+
+<p>// 시간 동기화</p>
+
+<blockquote>
+  <p>ntp &amp; libedit &amp; ntpdate 설치
+yum -y install ntp</p>
+</blockquote>
+
+<blockquote>
+  <p>peer 설정
+vi /etc/ntp.conf</p>
+  <blockquote>
+    <p>수정
+server time.bora.net
+server time.kornet.net</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <p>시작프로그램에 등록
+systemctl enable ntpd.service</p>
+</blockquote>
+
+<blockquote>
+  <p>서비스 시작
+systemctl start ntpd.service</p>
+</blockquote>
+
+<blockquote>
+  <p>확인
+ntpq -p</p>
+</blockquote>
+
+<blockquote>
+  <p>rdate 설치
+yum -y install rdate</p>
+</blockquote>
+
+<blockquote>
+  <p>하드웨어 시간확인
+hwclock -r
+시간설정
+hwclock -w (운영체제값과 동기화)
+hwclock -s (운영체제 값을 동기화 시킴)</p>
+</blockquote>
+
+<blockquote>
+  <p>운영체제 시간확인
+date</p>
+</blockquote>
+
+<blockquote>
+  <p>타임서버 시간확인
+rdate -p time.bora.net
+시간설정
+rdate -s time.bora.net</p>
+</blockquote>
+
+<blockquote>
+  <p>시스템 부팅시 동기화
+vi /etc/rc.d/rc.local</p>
+  <blockquote>
+    <p>추가
+/usr/bin/rdate -s time.bora.net
+/sbin/hwclock -w</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <p>cron을 이용한 주기적인 동기화
+crontab -e</p>
+  <blockquote>
+    <p>매일새벽 1시동기화 추가
+00    01    *    *    *    /usr/bin/rdate -s time.bora.net&amp;&amp;hwclock -w</p>
+  </blockquote>
+</blockquote>
+
+<p>// TOMCAT7 설치</p>
+
+<p>yum install tomcat7</p>
+<blockquote>
+  <blockquote>
+    <p>Package tomcat7-7.0.54-2.jpp6.noarch.rpm is not signed  ( 이런 오류가 나면 )
+vim /etc/yum.repos.d/jpackage.repo
+gpgcheck=0</p>
+  </blockquote>
+</blockquote>
+
+<p>```</p>
 
   </div>
 

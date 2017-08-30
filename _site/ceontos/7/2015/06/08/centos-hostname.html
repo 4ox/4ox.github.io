@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>지킬 첫 글쓰기 테스트</title>
-  <meta name="description" content="지킬로 블로그를 생성해 보았다.">
+  <title>centOS7 hostname 변경</title>
+  <meta name="description" content="CentOS 7.0 hostname 변경">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/blog/2017/08/28/blog-jekyll-test.html">
+  <link rel="canonical" href="http://localhost:4000/ceontos/7/2015/06/08/centos-hostname.html">
   <link rel="alternate" type="application/rss+xml" title="4ox devlog" href="/feed.xml">
   
   
@@ -70,24 +70,38 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">지킬 첫 글쓰기 테스트</h1>
+    <h1 class="post-title" itemprop="name headline">centOS7 hostname 변경</h1>
     <p class="post-meta">
-      <time datetime="2017-08-28T22:25:36+09:00" itemprop="datePublished">
+      <time datetime="2015-06-08T12:00:00+09:00" itemprop="datePublished">
         
-        Aug 28, 2017
+        Jun 8, 2015
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>지킬로 블로그를 생성해 보았다.</p>
+    <h1 id="centos-70-hostname-변경">CentOS 7.0 hostname 변경</h1>
 
-<p>간단한 javascript 구문도 넣어본다.</p>
+<p>CentOS 7 이전 버전에서는 /etc/sysconfig/network 파일에 HOSTNAME 을 정의하면 되었는데
+CentOS 7 부터는 데비안 계열처럼 /etc/hostname 이라는 파일을 사용하도록 변경되었습니다.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"a"</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"b"</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"c"</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"d"</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">"e"</span> <span class="p">:</span> <span class="mi">5</span> <span class="p">};</span>
-<span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">o</span><span class="p">);</span>
+<p>/etc/sysconfig/network 파일은 보통 아래와 같이 설정을 합니다.</p>
 
-<span class="c1">//result : (5) [1, 2, 3, 4, 5]</span></code></pre></figure>
+<p>NETWORKING=yes
+NETWORKING_IPV6=no
+HOSTNAME=centos70
+CentOS 7 에서는 이렇게만 하면 hostname 이 변경이 안 되고 hostnamectl 이라는 명령어를 사용하면 된다.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>hostnamectl <span class="nb">set</span>-hostname centos7
+</code></pre>
+</div>
+<p>hostname 을 확인해 볼려면 hostname 명령어를 실행해 보면 됩니다.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>hostname
+</code></pre>
+</div>
+
+<p>이렇게 hostname 을 설정을 하면 /etc/hostname 이라는 파일이 생성이 되어 있는 것을 확인할 수 있습니다. 우분투 등의 데비안 계열의 리눅스와 동일하게 변경되었습니다.</p>
 
 
   </div>

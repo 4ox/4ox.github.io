@@ -1,11 +1,19 @@
 ---
 layout: post
+<<<<<<< HEAD
 title:  "Jenkins install"
 date:   2016-12-16 12:00:00 +0900
 categories: jenkins
 ---
 
 
+=======
+title:  "gitlab 설치"
+date:   2016-11-24 12:00:00 +0900
+categories: jenkins
+---
+
+>>>>>>> 01ea5d6a58c5d66c3b2326c71305b36e365fbc9a
 # JENKINS
 
 ## jenkins 레파지터리 등록 및 설치
