@@ -3,6 +3,7 @@ layout: post
 title:  "Get Paramter from URL"
 date:   2015-10-13 12:00:00 +0900
 categories: javascript
+tags: [javascript, url, parameter]
 ---
 
 Import parameters with a single line function

@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  "코딩 테스트 : 1이 몇번 들어 있는지 세어라."
+feature-img: "assets/img/features/code-review-in-it-recruitment.jpg"
+thumbnail: "assets/img/features/code-review-in-it-recruitment.jpg"
 date:   2015-10-12 15:16:20 +0900
 categories: quiz
 ---
