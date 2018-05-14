@@ -22,7 +22,7 @@ theme_settings:
 
   # Icons
   rss: true  # Make sure you created a feed.xml with feed.xml layout
-  email_address: mail@4ox.kr # Full email address, e.g. "sam@example.com"
+  email_address: # Full email address, e.g. "sam@example.com"
   behance:
   bitbucket:
   dribbble:
@@ -87,7 +87,6 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:name
-
 
 # BUILD SETTINGS
 markdown: kramdown
