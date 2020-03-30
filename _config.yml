@@ -37,7 +37,7 @@ paginate: 7
 footer-links:
   behance: # https://www.behance.net/<username>
   dribbble:
-  email:
+  email: mail@4ox.kr
   facebook:
   flickr:
   github: 4ox
@@ -45,7 +45,7 @@ footer-links:
   instagram:
   linkedin:
   pinterest:
-  rss: # just type anything here for a working RSS icon
+  rss: https://4ox.kr/sitemap.xml
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   tumblr: # https://<username>.tumblr.com
   twitter: #jekyllrb
